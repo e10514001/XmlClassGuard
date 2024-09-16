@@ -34,6 +34,17 @@ class XmlClassGuardPlugin : Plugin<Project> {
                 it.createTasks(guardExt, variant)
             }
         }
+
+//        val androidComponents = project.extensions.getByType(AndroidComponentsExtension::class.java)
+//        androidComponents.onVariants {  variant ->
+//            variant.instrumentation.transformClassesWith(
+//                StringFogTransform::class.java,
+//                InstrumentationScope.ALL) {
+//            }
+//            variant.instrumentation.setAsmFramesComputationMode(
+//                FramesComputationMode.COPY_FRAMES
+//            )
+//        }
     }
 
     private fun Project.createTasks(guardExt: GuardExtension, variant: ApplicationVariant) {
